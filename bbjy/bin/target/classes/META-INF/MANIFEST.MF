@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-Title: bbjy
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.ynyes.bbjy
+Build-Jdk: 1.7.0_67
+Built-By: Administrator
+Created-By: Maven Integration for Eclipse
+
