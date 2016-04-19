@@ -64,7 +64,7 @@ public class TdDataController {
 			page = 0;
 		}
 
-		Integer size = ClientConstant.pageSize;
+		Integer size = ClientConstant.infoSize;
 
 		// 新闻动态所有类别
 		List<TdArticleCategory> tdArticleCategories = tdArticleCategoryService.findByMenuId(8L);
@@ -149,7 +149,7 @@ public class TdDataController {
 			page = 0;
 		}
 
-		Integer size = ClientConstant.pageSize;
+		Integer size = ClientConstant.infoSize;
 
 		// 新闻动态所有类别
 		List<TdArticleCategory> tdArticleCategories = tdArticleCategoryService.findByMenuIdAndParentId(11L, 0L);
