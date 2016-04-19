@@ -1,0 +1,715 @@
+.noborder {border: 0; background: transparent;}
+
+
+/*
+日程页面
+*/
+.dateform {
+    float: left;
+    width: 100%;
+}
+
+.dateform  .yearandmonth {
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+    background: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+}
+.dateform  .yearandmonth a {
+    display: inline-block;
+    text-indent: -99999px;
+    width: 6px;
+    margin: 0 15px;
+    background: url("../crmimages/leftrighticon.png") 0px 20px no-repeat;
+}
+.dateform  .yearandmonth a.adddaysdate{
+    width: 110px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+     margin-top: 10px;
+    background: #00a2ea;
+    float: right;
+    text-indent: 0;
+    text-decoration: none;
+}
+.dateform  .yearandmonth a.addnew{
+    width: auto;
+    color: #00a2ea;
+    text-indent: 1px;
+    float: right;
+    margin: 0;
+    margin-right: 15px;
+    background: none;
+}
+.dateform  .yearandmonth a.next {
+    background: url("../crmimages/leftrighticon.png") -6px 20px no-repeat;
+}
+.dateform  .yearandmonth label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+.dateform  .yearandmonth label.daylinestitle {
+    font-size: 16px;
+    font-weight: normal;
+    color: #666;
+    float: left;
+    text-indent: 10px;
+}
+.weekitem {
+    float: left;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #ddd;
+}
+.weekitem label {
+    float: left;
+    width: 14.28%;
+    font-size: 14px;
+    color: #333;
+    text-indent: 10px;
+}
+.days {
+    float: left;
+    width: 100%;
+}
+.days > div {
+    position: relative;
+    float: left;
+    width: 14.285%;
+    height: 150px;
+    color: #333;
+    text-decoration: none;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.days > div.current {
+    background: #d9f3ff;
+}
+.days > div > label {
+    width: 100%;
+    float: left;
+    line-height: 26px;
+    margin-top: 10px;
+    text-indent: 10px;
+}
+.days > div label.otherday {
+    color: #999;
+}
+.days .dayplane {
+    float: left;
+    width: 100%;
+    max-height: 110px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.days .dayplane::-webkit-scrollbar {width: 8px; }
+.days .dayplane::-webkit-scrollbar-track { background-color:#0288c4;
+    -webkit-border-radius: 1.5em;
+    -moz-border-radius: 1.5em;
+    border-radius:1.5em;
+}
+.days .dayplane::-webkit-scrollbar-thumb {background-color:#8fdcff;
+    -webkit-border-radius: 1.5em;
+    -moz-border-radius: 1.5em;
+    border-radius:1.5em;
+}
+
+.days .dayplane a {
+    width: 100%;
+    float: left;
+    padding:0 5px 0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 26px;
+    text-decoration: none;
+}
+.days .dayplane a:hover ,
+.days .dayplane a.current {
+    background: #00a2ea;
+    color: #fff;
+}
+
+.weekitem1 {
+    width: 100%;
+    float: left;
+    background: #ededed;
+}
+.weekitem1 span {
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    color: #333;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.weekitem1 span.on {
+    background: #fff;
+    border-bottom: 0;
+    text-align: center;
+    color: #1080cb;
+    font-weight: bold;
+}
+.weekitem1 span.on .weekname {
+    display: inline-block;
+    margin-left: 10%;
+}
+.weekitem1 span:last-child {
+    border-right: 0;
+}
+.weekitem1 span .weekname {
+    display: none;
+}
+
+
+.dialog-detailinfo {
+    display: block;
+    width: 800px;
+    right: -800px;
+    min-width: 500px;
+    border-radius: 0;
+    box-shadow: 0 0 10px #aaa;
+}
+.dialog-title1 {
+    float: left;
+    width: 100%;
+    line-height: 22px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 9px;
+    margin-bottom: 20px;
+}
+.dialog-title1 .title {
+    font-size: 16px;
+    color: #00a2ea;
+    text-indent: 24px;
+}
+.dialog-title1 a.a_save {
+    float: right;
+    font-size: 14px;
+    padding:0 5px;
+    background: #00a2ea;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+}
+.dialog-title1 .imgiconsave {
+    float: right;
+    font-size: 14px;
+    padding:0 10px 0 20px;
+    background: #fff url("../crmimages/saveicon.png")left center no-repeat;
+    text-decoration: none;
+    border: 0;
+    line-height: 22px;
+    margin-right: 10px;
+    border-right: 1px solid #999;
+}
+.inputdatetitle {
+    width: 100%;
+    border-radius: 3px;
+    border: 0;
+    background: #eee;
+    margin-bottom: 20px;
+    height: 50px;
+    line-height: 50px;
+    outline: none;
+    text-indent: 30px;
+    font-size: 16px;
+    color: #666;
+}
+.dialog-inputitem{
+    width: 100%;
+    border: 1px solid #ddd;
+    line-height: 50px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    min-height: 50px;
+    overflow: hidden;
+}
+.dialog-inputitem .lbltitle{
+    float: left;
+    padding-left:40px;
+    color: #999;
+    font-size: 16px;
+    width: 28%;
+    max-width: 130px;
+}
+.dialog-inputitem .dateicon{
+    background: url("../crmimages/inputdateicon.png") 14px 17px no-repeat;
+}
+.dialog-inputitem .flagicon{
+    background: url("../crmimages/inputflagicon.png") 15px 17px no-repeat;
+}
+.dialog-inputitem .detailicon{
+    background: url("../crmimages/inputdetailicon.png") 13px 16px no-repeat;
+}
+.dialog-inputitem input[type='text'] {
+    float: left;
+    width: 72%;
+    border: 0;
+    outline: none;
+    line-height: 50px;
+}
+.dialog-inputitem textarea{
+    float: left;
+    border: 0;
+    height: 100px;
+    width: 420px;
+    outline: none;
+    line-height: 24px;
+}
+.dialog-content .btnnew{
+    float: right;
+    width: 70px;
+    height: 30px;
+    background: #00a2ea;
+    color: #fff;
+    border: 0;
+    margin-right: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+.dialog-content .btncancel{
+    float: right;
+    width: 70px;
+    height: 30px;
+    background: #fff;
+    color: #666;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+.detail-title {
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    padding:0 20px 10px;
+    border-bottom: 1px solid #00a2ea;
+}
+.detail-title .title{
+    float: left;
+    width: 100%;
+    color: #00a2ea;
+    line-height: 36px;
+}
+
+
+/*
+日报页面
+*/
+.publishdateplane {
+    float: left;
+    width: 100%;
+    height: 140px;
+    padding: 10px 13px;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    background: #fff;
+}
+.publishdateplane textarea {
+    float: left;
+    width: 100%;
+    border: 0;
+    height: 80px;
+    margin-bottom: 10px;
+    line-height: 24px;
+    color: #666;
+    outline: none;
+    font-size: 14px;
+    border-bottom: 1px solid #e2e2e2;
+}
+.publishdateplane .uploadannex {
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+.publishdateplane .uploadannex span{
+    float: left;
+    padding-left: 20px;
+    color: #999;
+    cursor: pointer;
+    background:url("../crmimages/annexicon.png") left no-repeat;
+}
+.publishdateplane .uploadannex input[type='file']{
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    z-index: 3;
+    left: 0;
+    width: 100%;
+}
+.publishdateplane .btnpublish {
+    float: right;
+    width: 80px;
+    line-height: 30px;
+    background: #00a2ea;
+    color: #fff;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+}
+
+.datechoose {
+    float: left;
+    width: 100%;
+    margin: 20px 0;
+}
+.datechoose > label {
+    line-height: 30px;
+}
+.datechoose .datepicker {
+    position: relative;
+    float: left;
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    border:1px solid #a3adba;
+    border-radius: 3px;
+    background: #fff;
+    margin-right: 20px;
+
+}
+.datechoose .datepicker > span {
+    width: 100%;
+    float: left;
+    border-radius: 3px;
+    text-indent:15px;
+    line-height: 28px;
+    color: #666;
+    background: #fff url("../crmimages/datepickerbg.png") 50px center no-repeat;
+}
+.datechoose .datepicker input[type='text']{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+/* 事项列表 */
+.dateplanelist{
+    width: 100%;
+    float: left;
+}
+.dateplanelist .dateplaneitem{
+    width: 100%;
+    float: left;
+    background: #fff;
+    padding: 14px;
+    border-radius: 3px;
+    box-shadow: 0 0 5px #e2e2e2;
+    margin-bottom: 22px;
+}
+.dateplanelist .dateplaneitem .dptitle{
+    float: left;
+    width: 100%;
+    position: relative;
+}
+.dateplaneitem .dptitle .datewrap {
+    position: absolute;
+    float: left;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 54px;
+    height: 54px;
+    border: 1px solid #00a2ea;
+    background: #fff;
+    border-radius: 50%;
+    color: #333;
+    text-align: center;
+}
+.dateplaneitem .dptitle .datewrap label{
+    float: left;
+    width: 100%;
+}
+.dateplaneitem .dptitle .datewrap .date{
+    color: #00a2ea;
+    margin-top: 8px;
+    font-size: 12px;
+}
+.dateplaneitem .dptitle .titlenav{
+    float: left;
+    width: 100%;
+    border-top: 1px solid #00a2ea;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    line-height: 28px;
+    font-size: 12px;
+    padding-left: 60px;
+}
+.dateplaneitem .dptitle .titlenav a {
+    text-decoration: none;
+    margin-right: 10px;
+}
+.dateplaneitem .dptitle .titlenav a.current{
+    color: #00a2ea;
+}
+.dateplaneitem .dpcontent{
+    float: left;
+    width: 100%;
+}
+.dateplaneitem .dpcontent .initem {
+    float: left;
+    width: 100%;
+    line-height: 30px;
+}
+.dateplaneitem .dpcontent .initem .lbltime{
+    float: left;
+    width: 100%;
+    color: #999;
+}
+.dateplaneitem .dpcontent .initem .spantext{
+    float: left;
+    width: 100%;
+    padding-left: 25px;
+}
+.dateplaneitem .dpcontent .initem .spantext.txticon{
+    background: url("../crmimages/texticon.png") 5px center no-repeat;
+}
+.dateplaneitem .dpcontent .initem .spantext.talkicon{
+    background: url("../crmimages/talkicon.png") 5px center no-repeat;
+}
+.dateplaneitem .dpcontent .initem .txtblue {
+    color: #00a2ea;
+}
+
+/* 佣金查询列表 */
+.ullistitem {
+    float: left;
+    width: 100%;
+    color: #666;
+}
+.ullistitem li {
+    float: left;
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    text-indent: 20px;
+    line-height: 50px;
+    border-bottom: 1px solid #e2e2e2;
+}
+.ullistitem li:hover {
+    background: #f6f6f6;
+}
+.ullistitem li.thli {
+    text-indent: 50px;
+    font-size: 16px;
+}
+.ullistitem .thli:hover{
+    background: none;
+}
+.ullistitem li a {
+    margin-left: 20px;
+}
+.tablemoneycheck {
+    width: 100%;
+    color: #999;
+    line-height: 28px;
+    border: 1px solid #e2e2e2;
+    border-bottom: 0;
+    margin-bottom: 20px;
+}
+.tablemoneycheck tr{
+    border-bottom: 1px solid #e2e2e2;
+}
+.tablemoneycheck th,.tablemoneycheck td{
+    text-align: center;
+}
+.tablemoneycheck th {
+    color: #666;
+}
+.tablemoneycheck .td1{
+    text-align: left;
+    text-indent: 5px;
+}
+.detail-content .tips{
+    line-height: 30px;
+}
+.dialog-detailinfo1 {
+    display: block;
+    width: 41.667%;
+    right: -41.667%;
+    min-width: 500px;
+    border-radius: 0;
+    padding:0;
+    box-shadow: 0 0 10px #aaa;
+}
+.dialog-detailinfo .dialog-title{
+    padding:20px;
+    padding-bottom: 0;
+}
+.detail-content {
+    padding: 20px;
+    float: left;
+    width: 100%;
+}
+
+/* 业绩查询页面 */
+.featlist {
+    float: left;
+    width: 100%;
+}
+.featlist table {
+    width: 100%;
+}
+.featlist table tr{
+    width: 100%;
+    border-bottom: 1px solid #e2e2e2;
+}
+.featlist table tr th{
+    text-align: center;
+    line-height: 50px;
+}
+.featlist table tr td {
+    line-height: 50px;
+    text-align: center;
+}
+.featlist table tr td.td1{
+    text-align: left;
+    text-indent: 5px;
+}
+.featlist table tr td.td1 label{
+    margin: 0 5px;
+}
+.featlist .total{
+    float: left;
+    width: 100%;
+    font-size: 16px;
+    color: #666;
+    text-align: right;
+    padding:0 20px;
+    line-height: 40px;
+    border-bottom: 1px solid #e2e2e2;
+}
+.featlist .total .txtblue{
+    color: #00a2ea;
+}
+.right_search {
+    width: 80.72%;
+    float: left;
+    padding-left: 5px;
+    margin-top: 15px;
+}
+.right_search label {
+    line-height: 28px;
+    float: left;
+    margin-right: 10px;
+}
+.right_search > a {
+    float: left;
+    margin-right: 10px;
+    padding:0 15px;
+    line-height: 28px;
+    text-decoration: none;
+    background: transparent;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.right_search > a:hover,.right_search > a.on{
+    background: #00a2ea;
+    color: #fff;
+}
+.right_search .autotime{
+    float: left;
+    margin-left: 10px;
+}
+.right_search .autotime .inputdate{
+    float: left;
+    line-height: 29px;
+    height: 28px;
+    border: 1px solid transparent;
+    outline: none;
+    padding-left: 25px;
+    background: #fff url("../crmimages/inputdateicon.png") 5px center no-repeat;
+}
+.right_search .autotime .inputdate:focus {
+    border: 1px solid #e9e9e9;
+}
+.right_search .autotime .line{
+    margin: 0 5px;
+    color: #ddd;
+}
+
+/* 下拉框样式*/
+.wrap-select{
+    position: relative;
+    float: right;
+    width: 42%;
+    margin-right: 2%;
+}
+.wrap-select input.txtselect {
+    float: left;
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #00a2ea;
+    border-radius: 3px;
+    outline: none;
+    margin-top: 22px;
+    text-align: center;
+    padding: 0 12% 0 6%;
+    background: #fff url("../crmimages/downicon1.png") 94% 55% no-repeat;
+    cursor: pointer;
+}
+.wrap-select .txtselect_item{
+    position: absolute;
+    float: left;
+    display: none;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 172px;
+    padding: 5px 0px;
+    border-radius: 3px;
+    background: #fff;
+    z-index: 10;
+    border: 1px solid #e2e2e2;
+}
+.wrap-select .txtselect_item .initem{
+    float: left;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+.wrap-select .txtselect_item .initem a {
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    line-height: 30px;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    height: 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-indent: 0;
+}
+.wrap-select .txtselect_item .initem a:hover,
+.wrap-select .txtselect_item .initem a.current {
+    background: #f6f6f6;
+}
+.wrap-select .txtselect_item .initem::-webkit-scrollbar {
+    width: 8px;
+}
+.wrap-select .txtselect_item .initem::-webkit-scrollbar-track {
+    background-color:#eee;
+    /*-webkit-border-radius: 2em;*/
+    /*-moz-border-radius: 2em;*/
+    /*border-radius:2em;*/
+}
+.wrap-select .txtselect_item .initem::-webkit-scrollbar-thumb {
+    background-color:#ddd;
+    /*-webkit-border-radius: 2em;*/
+    /*-moz-border-radius: 2em;*/
+    /*border-radius:2em;*/
+}

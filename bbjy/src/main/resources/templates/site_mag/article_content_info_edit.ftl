@@ -110,6 +110,32 @@
             }
         }
         
+        // 添加佣金
+        $("#addpro").click(function(){
+            showDialogPro();
+        });
+           
+        //创建窗口
+        function showDialogPro(obj) {
+            var objNum = arguments.length;
+            
+            var giftDialog = $.dialog({
+                id: 'proDialogId',
+                lock: true,
+                max: false,
+                min: false,
+                title: "佣金",
+                content: 'url:/Verwalter/list/dialog/pro?pro=' + $("#var_box_pro").children("tr").length,
+                width: 600,
+                height: 450
+            });
+            
+            //如果是修改状态，将对象传进去
+            if (objNum == 1) {
+                giftDialog.data = obj;
+            }
+        }
+        
         //删除促销赠品节点
         function delGiftNode(obj) {
             $(obj).parent().parent().remove();
@@ -131,6 +157,26 @@ function show_goods_gift_dialog(obj) {
                 content: 'url:/Verwalter/list/dialog/article?total=' + $("#var_box_gift").children("tr").length,
                 width: 600,
                 height: 300
+            });
+            
+            //如果是修改状态，将对象传进去
+            if (objNum == 1) {
+                giftDialog.data = obj;
+            }
+}
+// 创建佣金窗口
+function show_pro(obj) {
+            var objNum = arguments.length;
+            
+            var giftDialog = $.dialog({
+                id: 'proDialogId',
+                lock: true,
+                max: false,
+                min: false,
+                title: "佣金",
+                content: 'url:/Verwalter/list/dialog/pro?pro=' + $("#var_box_pro").children("tr").length,
+                width: 600,
+                height: 450
             });
             
             //如果是修改状态，将对象传进去
@@ -226,7 +272,9 @@ function del_goods_gift(obj) {
             <div class="content-tab-ul-wrap">
                 <ul>
                     <li><a href="javascript:;" onclick="tabs(this);" class="selected">基本信息</a></li>
-                    <li class="info-type-1  info-type"><a href="javascript:;" onclick="tabs(this);" class="">下载资料</a></li>
+                    <#if mid?? && mid==11>
+                    <li><a href="javascript:;" onclick="tabs(this);" class="">下载资料</a></li>
+                    </#if>
                     <li><a href="javascript:;" onclick="tabs(this);" class="">SEO选项</a></li>
                 </ul>
             </div>
@@ -411,7 +459,7 @@ function del_goods_gift(obj) {
         </dl>
     </div>
        
-<div class="tab-content info-type-0  info-type" style="display: none;">
+<div class="tab-content" style="display: none;">
 
         <dl>
             <dt>资料下载</dt>
@@ -476,6 +524,98 @@ function del_goods_gift(obj) {
                                     <td>
                                         <i class="icon"></i>
                                         <a title="编辑" class="img-btn edit operator" onclick="show_goods_gift_dialog(this);">编辑</a>
+                                        <a title="删除" class="img-btn del operator" onclick="del_goods_gift(this);">删除</a>
+                                    </td>
+                                </tr>
+                            </#list>
+                        </#if>
+                       </#if> 
+                    </tbody>
+                </table>
+            </dd>
+        </dl>
+        
+        <dl>
+            <dt>产品佣金</dt>
+            <dd>
+                <a id="addpro" class="icon-btn add"><i></i><span>添加佣金</span></a>
+                <span class="Validform_checktip"></span>
+            </dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd>
+                <table border="0" cellspacing="0" cellpadding="0" class="border-table" width="98%">
+                    <thead>
+                        <tr>
+                            <th width="6%">
+                                排序
+                            </th>
+                            <th width="17%">
+                                标题
+                            </th>
+                            <th width="10%">
+                                第一年
+                            </th>
+                            <th width="10%">
+                                第二年
+                            </th>
+                            <th width="10%">
+                                第三年
+                            </th>
+                            <th width="10%">
+                                第四年
+                            </th>
+                            <th width="10%">
+                                第五年
+                            </th>
+                            <th width="10%">
+                                第六年
+                            </th>
+                            <th width="10%">
+                                第七年
+                            </th>
+                            <th width="7%">
+                                操作
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="var_box_pro">
+                    <#if article??>
+                        <#if article.proList??>
+                            <#list article.proList as pro>
+                                <tr class="td_c">
+                                    <td>
+                                        <input type="hidden" name="proList[${pro_index}].id"  value="${pro.id?c!''}">
+                                        <input type="text" name="proList[${pro_index}].sortId" class="td-input" value="${pro.sortId!''}" style="width:90%;">
+                                    </td>
+                                    <td>
+                                        <input type="text" id="title" name="proList[${pro_index}].title" class="td-input" value="${pro.title!''}" style="width:90%;">
+                                    </td>
+                                    <td>
+                                        <input type="text" id="firstYear" name="proList[${pro_index}].firstYear" class="td-input" value="<#if pro.firstYear??>${pro.firstYear?string('0.00')}</#if>" style="width:90%;">
+                                    </td>
+                                    <td>
+                                        <input type="text" id="second" name="proList[${pro_index}].second" class="td-input" value="<#if pro.second??>${pro.second?string('0.00')}</#if>" style="width:90%;">
+                                    </td>
+                                    <td>
+                                        <input type="text" id="third" name="proList[${pro_index}].third" class="td-input" value="<#if pro.second??>${pro.third?string('0.00')}</#if>" style="width:90%;">
+                                    </td>
+                                    <td>
+                                        <input type="text" id="fourth" name="proList[${pro_index}].fourth" class="td-input" value="<#if pro.second??>${pro.fourth?string('0.00')}</#if>" style="width:90%;">
+                                    </td>
+                                    <td>
+                                        <input type="text" id="fifth" name="proList[${pro_index}].fifth" class="td-input" value="<#if pro.second??>${pro.fifth?string('0.00')}</#if>" style="width:90%;">
+                                    </td>
+                                    <td>
+                                        <input type="text" id="sixth" name="proList[${pro_index}].sixth" class="td-input" value="<#if pro.second??>${pro.sixth?string('0.00')}</#if>" style="width:90%;">
+                                    </td>
+                                    <td>
+                                        <input type="text" id="seventh" name="proList[${pro_index}].seventh" class="td-input" value="<#if pro.second??>${pro.seventh?string('0.00')}</#if>" style="width:90%;">
+                                    </td>
+                                    <td>
+                                        <i class="icon"></i>
+                                        <a title="编辑" class="img-btn edit operator" onclick="show_pro(this);">编辑</a>
                                         <a title="删除" class="img-btn del operator" onclick="del_goods_gift(this);">删除</a>
                                     </td>
                                 </tr>

@@ -1,5 +1,7 @@
 package com.ynyes.bbjy.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
@@ -17,4 +19,6 @@ public interface TdManagerRepo extends
 		JpaSpecificationExecutor<TdManager> 
 {
     TdManager findByUsernameAndIsEnableTrue(String username);
+    
+    List<TdManager> findByRoleIdAndIsEnableTrue(Long roleId);
 }

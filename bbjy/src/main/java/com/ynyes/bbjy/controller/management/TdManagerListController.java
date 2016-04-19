@@ -250,20 +250,11 @@ public class TdManagerListController {
             
             if (null == categoryId)
             {
-            	if(mid.equals(8L)){
-            		map.addAttribute("content_page", tdArticleService.findByMenuIdOrder(mid, page, size));
-            	}else{
-            		map.addAttribute("content_page", tdArticleService.findByMenuId(mid, page, size));
-            	}
+                map.addAttribute("content_page", tdArticleService.findByMenuId(mid, page, size));
             }
             else
             {
-            	if(mid.equals(8L) && !categoryId.equals(3L)){
-            		 map.addAttribute("content_page", tdArticleService.findByMenuIdAndCategoryIdOrderBySortId(mid, categoryId, page, size));
-            	}else{
-            		map.addAttribute("content_page", tdArticleService.findByMenuIdAndCategoryId(mid, categoryId, page, size));
-            	}
-                
+                map.addAttribute("content_page", tdArticleService.findByMenuIdAndCategoryId(mid, categoryId, page, size));
             }
         }
 //        else if (cid.equals(2L)) // 商品
@@ -400,20 +391,11 @@ public class TdManagerListController {
             
             if (null == categoryId)
             {
-            	if(mid.equals(8L)){
-            		map.addAttribute("content_page", tdArticleService.findByMenuIdOrder(mid, page, size));
-            	}else{
-            		map.addAttribute("content_page", tdArticleService.findByMenuId(mid, page, size));
-            	}
+                map.addAttribute("content_page", tdArticleService.findByMenuId(mid, page, size));
             }
             else
             {
-            	if(mid.equals(8L) && !categoryId.equals(3L)){
-            		 map.addAttribute("content_page", tdArticleService.findByMenuIdAndCategoryIdOrderBySortId(mid, categoryId, page, size));
-            	}else{
-            		map.addAttribute("content_page", tdArticleService.findByMenuIdAndCategoryId(mid, categoryId, page, size));
-            	}
-                
+                map.addAttribute("content_page", tdArticleService.findByMenuIdAndCategoryId(mid, categoryId, page, size));
             }
         }
 //        else if (cid.equals(2L)) // 商品

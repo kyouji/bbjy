@@ -10,11 +10,13 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ynyes.bbjy.entity.TdManager;
+import com.ynyes.bbjy.entity.TdManagerRole;
 import com.ynyes.bbjy.service.TdManagerLogService;
+import com.ynyes.bbjy.service.TdManagerRoleService;
 import com.ynyes.bbjy.service.TdManagerService;
 
 /**
- * 品牌管理控制器
+ * 登录管理控制器
  * 
  * @author Sharon
  * 
@@ -28,6 +30,9 @@ public class TdManagerLoginController {
     
     @Autowired
     TdManagerService tdManagerService;
+    
+    @Autowired
+    TdManagerRoleService tdManagerRoleService;
     
     @RequestMapping(value="/login")
     public String login(String username, String password, ModelMap map, HttpServletRequest request){
@@ -47,6 +52,13 @@ public class TdManagerLoginController {
         else
         {
             TdManager manager = tdManagerService.findByUsernameAndIsEnableTrue(username);
+            
+            TdManagerRole tdManagerRole = null;
+            
+            if (null != manager && null != manager.getRoleId())
+            {
+                tdManagerRole = tdManagerRoleService.findOne(manager.getRoleId());
+            }
             
             if (null != manager)
             {
@@ -71,9 +83,15 @@ public class TdManagerLoginController {
                     
                     tdManagerService.save(manager);
                     
-                    request.getSession().setAttribute("manager", username);
-                    tdManagerLogService.addLog("login", "用户登录", request);
-                    return "redirect:/Verwalter";
+                    if(null != tdManagerRole && !tdManagerRole.getIsSys()){
+                    	request.getSession().setAttribute("username", manager.getUsername());
+                    	request.getSession().setAttribute("man", manager);
+                    	return "redirect:/";
+                    }else{
+                    	request.getSession().setAttribute("manager", username);
+                    	tdManagerLogService.addLog("login", "用户登录", request);
+                    	return "redirect:/Verwalter";
+                    }
                 }
             }
             

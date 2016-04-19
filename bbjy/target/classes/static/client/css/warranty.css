@@ -1,0 +1,647 @@
+.listitem {
+    float: left;
+    width: 100%;
+}
+
+.listitem ul {
+    float: left;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.listitem ul li {
+    float: left;
+    width: 13%;
+    color: #999;
+    text-indent: 5px;
+}
+.listitem .ulth:hover{
+    background: none;
+}
+
+.listitem ul.ulth li {
+    text-indent: 10px;
+    font-size: 16px;
+    color: #666;
+}
+
+.listitem ul li.li01 {
+    width: 20%;
+    color: #666;
+    text-indent: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.listitem ul li.li01 .dialoghref {
+    text-indent: 10px;
+    display: inline-block;
+}
+.listitem ul.ulth li.li01 {
+    text-indent: 50px;
+}
+
+.listitem ul li.li02 {
+    width: 15%;
+    color: #666;
+    text-indent: 20px;
+}
+
+
+.listitem ul:hover {
+    background: #f6f6f6;
+}
+.listitem1 ul li {
+    width: 9%;
+    text-indent: 10px;
+    text-align: center;
+}
+.listitem1 ul li.li01 {
+    width: 13.5%;
+}
+.listitem ul.ulth li.li01 {
+    text-indent: 20px;
+}
+.listitem1 .gouicon{
+    display: inline-block;
+    background: url("../crmimages/gouicon.png") no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.listitem1 .chaicon{
+    display: inline-block;
+    background: url("../crmimages/chaicon.png") no-repeat;
+    width: 16px;
+    height: 16px;
+}
+
+/* 正文详情弹窗样式 */
+.dialog-title {
+    padding:20px;
+    margin-bottom: 0;
+}
+.dialog-detailinfo {
+    display: block;
+    width: 800px;
+    right: -800px;
+    min-width: 500px;
+    border-radius: 0;
+    padding:0;
+    box-shadow: 0 0 10px #aaa;
+}
+.dialog-case-nav {
+    width: 100%;
+    float: left;
+    height: 38px;
+    margin-bottom: 20px;
+    padding:0 20px;
+    border-bottom: 1px solid #00a2ea;
+}
+.dialog-case-nav span {
+    float: left;
+    width: 20%;
+    text-align: center;
+    max-width: 110px;
+    line-height: 37px;
+    margin-right: 0.2%;
+}
+.dialog-case-nav span.current {
+    border: 1px solid #00a2ea;
+    border-bottom: 0;
+    background: #fff;
+}
+.dialog-case-item {
+    float: left;
+    width: 100%;
+    padding:0 3.2%;
+    margin-bottom: 10%;
+    height: 86%;
+    overflow-y: auto;
+}
+
+.dialog-case-item::-webkit-scrollbar {width: 6px;}
+.dialog-case-item::-webkit-scrollbar-track {background-color:#eee;}
+.dialog-case-item::-webkit-scrollbar-thumb {background-color:#ddd;}
+/* 基本资料 */
+.baseinfo fieldset {
+     border: 0;
+     border-top: #ddd solid 1px;
+    margin-bottom: 20px;
+ }
+.baseinfo legend {
+    line-height: 36px;
+    padding-right: 20px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.casedetailtable {
+    float: left;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-bottom: 0;
+}
+.casedetailtable li {
+    float: left;
+    width: 50%;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+.casedetailtable li:nth-child(2n){
+    border-right:0;
+}
+.casedetailtable li span {
+    float: left;
+    width: 55%;
+    text-indent: 2%;
+    border-right: 1px solid #ddd;
+    color: #00a2ea;
+}
+.casedetailtable li label {
+    float: left;
+    width: 45%;
+    text-indent: 2%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 服务记录 */
+.servicerecord .recordtitle{
+    float: left;
+    width: 100%;
+    line-height: 22px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 9px;
+    margin-bottom: 20px;
+}
+.servicerecord .recordtitle span {
+    font-size: 16px;
+}
+.servicerecord .recordtitle a.addnew {
+    float: right;
+    font-size: 14px;
+    padding:0 5px;
+    background: #00a2ea;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+}
+.servicerecord .recordtitle a.a_return {
+    float: right;
+    width: 50px;
+    height: 30px;
+    margin-right: -3.4%;
+    background: #fff url("../crmimages/returnicon.png") no-repeat;
+    text-indent: -99999px;
+}
+
+.servicerecord .recordlist {
+    float: left;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-bottom: 0;
+}
+.servicerecord .recordlist ul {
+    float: left;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #e2e2e2;
+    cursor: pointer;
+}
+.servicerecord .recordlist ul li {
+    float: left;
+    width: 20%;
+    color: #999;
+    text-indent: 20px;
+}
+.servicerecord .recordlist ul li.li01 {
+    width: 40%;
+}
+.servicerecord .addrecordform ,
+.servicerecord .addrecordform ul,
+.servicerecord .addrecordform ul li {
+    width: 100%;
+    float: left;
+}
+.servicerecord .addrecordform ul li{
+    margin-bottom: 25px;
+    line-height: 24px;
+}
+.servicerecord .addrecordform ul li > label {
+    float: left;
+    width: 15%;
+    text-align: right;
+}
+.servicerecord .addrecordform ul li .inputitem{
+    width: 83%;
+    float: right;
+}
+.servicerecord .addrecordform ul li .inputitem label {
+    margin-left: 5%;
+}
+.servicerecord .addrecordform ul li textarea {
+    width: 83%;
+    float: right;
+    height: 110px;
+    padding:2px;
+    border: 1px solid #eee;
+    outline: none;
+}
+.servicerecord .addrecordform ul li .uploadannex {
+    width: 90px;
+    float: left;
+    height: 26px;
+    background: #f6f6f6;
+    position: relative;
+    overflow: hidden;
+    margin-left: 2%;
+    border-radius: 3px;
+}
+.servicerecord .addrecordform ul li .uploadannex span{
+    float: left;
+    width: 100%;
+    color: #999;
+    text-align: center;
+}
+.servicerecord .addrecordform ul li .uploadannex input[type='file']{
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    z-index: 3;
+    left: 0;
+    width: 100%;
+}
+.servicerecord .addrecordform ul li.libtn{
+    text-align: right;
+}
+.servicerecord .addrecordform ul .libtn input[type='button']{
+    border-radius: 3px;
+    padding: 0 15px;
+    line-height: 26px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.servicerecord .addrecordform ul .libtn .btnadd{
+    background: #00a2ea;
+    color: #fff;
+    border: 1px solid #00a2ea;
+}
+.servicerecord .addrecordform ul .libtn .btncancel{
+    background: #fff;
+    color: #999;
+    border: 1px solid #eee;
+}
+
+.servicerecord .addrecordform .selectitem {
+    width: 170px;
+    float: left;
+    line-height: 26px;
+    height: 26px;
+    position: relative;
+}
+.servicerecord .addrecordform .selectitem input.txtselect {
+    float: left;
+    width: 100%;
+    height: 26px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    outline: none;
+    text-align: center;
+    background: #f6f6f6 url("../crmimages/selectbg.png") 94% 60% no-repeat;
+    cursor: pointer;
+}
+.servicerecord .addrecordform .selectitem .txtselect_item{
+    position: absolute;
+    float: left;
+    display: none;
+    left: 0;
+    top:30px;
+    width: 100%;
+    height: 172px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background: #fff;
+    z-index: 10;
+    border: 1px solid #eee;
+}
+.servicerecord .addrecordform .selectitem .txtselect_item .initem {
+    float: left;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.servicerecord .addrecordform .selectitem .txtselect_item .initem a {
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    line-height: 30px;
+    overflow: hidden;
+    height: 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-indent: 10px;
+}
+.servicerecord .addrecordform .selectitem .txtselect_item .initem a:hover,
+.servicerecord .addrecordform .selectitem .txtselect_item .initem a.current {
+    background: #f6f6f6;
+}
+.servicerecord .addrecordform .selectitem .txtselect_item .initem::-webkit-scrollbar {
+    width: 8px;
+}
+.servicerecord .addrecordform .selectitem .txtselect_item .initem::-webkit-scrollbar-track {
+    background-color:#eee;
+    /*-webkit-border-radius: 2em;*/
+    /*-moz-border-radius: 2em;*/
+    /*border-radius:2em;*/
+}
+.servicerecord .addrecordform .selectitem .txtselect_item .initem::-webkit-scrollbar-thumb {
+    background-color:#ddd;
+    /*-webkit-border-radius: 2em;*/
+    /*-moz-border-radius: 2em;*/
+    /*border-radius:2em;*/
+}
+
+/* 服务记录详情 */
+.servicerecord .recorddetail {
+    float: left;
+    width: 100%;
+}
+.servicerecord .recorddetail .indetialinfo {
+    float: left;
+    width: 100%;
+    line-height: 42px;
+    font-size: 14px;
+}
+.servicerecord .recorddetail .indetialinfo span {
+    width: 100%;
+    float: left;
+    color: #999;
+}
+.servicerecord .recorddetail .indetialinfo span.span1{
+    width: 50%;
+}
+.servicerecord .recorddetail .indetialinfo span font {
+    color: #666;
+}
+.servicerecord .recorddetail .indetialinfo .a_download{
+    margin: 0 10px;
+    background: #00a2ea;
+    color: #fff;
+    padding: 0 6px;
+    border-radius: 3px;
+    line-height: 28px;
+    text-decoration: none;
+}
+
+.recorddetail .replay_form {
+    float: left;
+    width: 100%;
+    height: 190px;
+    padding:5px 15px 15px;
+    border: 1px solid #ddd;
+    background: #fafafa;
+    border-radius: 7px;
+}
+.recorddetail .replay_form label{
+    line-height: 38px;
+    margin-right: 10px;
+}
+.recorddetail .replay_form textarea {
+    width: 100%;
+    height: 94px;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding:3px;
+    outline: none;
+    line-height: 24px;
+    color: #666;
+    margin-bottom: 6px;
+}
+.recorddetail .replay_form .uploadannex {
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+.recorddetail .replay_form .uploadannex span{
+    float: left;
+    padding-left: 20px;
+    color: #999;
+    cursor: pointer;
+    background:url("../crmimages/annexicon.png") left no-repeat;
+}
+.recorddetail .replay_form .uploadannex input[type='file']{
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    z-index: 3;
+    left: 0;
+    width: 100%;
+}
+.recorddetail .replay_form .btnreplay {
+    float: right;
+    line-height: 28px;
+    color: #fff;
+    background: #00a2ea;
+    border: 0;
+    border-radius: 5px;
+    padding: 0 15px;
+}
+.recorddetail .replaylist{
+    float: left;
+    /*width: 100%;*/
+    /*height: 300px;*/
+    /*overflow-x: hidden;*/
+    /*overflow-y: auto;*/
+}
+/*.recorddetail .replaylist::-webkit-scrollbar {width: 8px;}*/
+/*.recorddetail .replaylist::-webkit-scrollbar-track {background-color:#eee;}*/
+/*.recorddetail .replaylist::-webkit-scrollbar-thumb {background-color:#ddd;}*/
+.recorddetail .replay_item {
+    float: left;
+    width: 100%;
+    padding:5px 13px 13px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    margin-top: 10px;
+}
+.recorddetail .replay_item span {
+    float: left;
+    width: 30%;
+    line-height: 32px;
+    color: #00a2ea;
+}
+.recorddetail .replay_item span.span1,
+.recorddetail .replay_item span.span2{
+    width: 100%;
+}
+.recorddetail .replay_item span.span1 font {
+    width: 100%;
+    float: left;
+}
+.recorddetail .replay_item span font {
+    color: #333;
+}
+.recorddetail .replay_item .a_download{
+    margin: 0 10px;
+    background: #00a2ea;
+    color: #fff;
+    padding: 0 6px;
+    border-radius: 3px;
+    line-height: 28px;
+    text-decoration: none;
+}
+
+/* 所有保单*/
+.allcaselist .recordlist {
+    float: left;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-bottom: 0;
+}
+.allcaselist .recordlist ul {
+    float: left;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #e2e2e2;
+}
+.allcaselist .recordlist ul li {
+    float: left;
+    width: 20%;
+    color: #999;
+    text-indent: 20px;
+}
+.allcaselist .recordlist ul li.li01 {
+    width: 40%;
+}
+.allcaselist fieldset {
+    border: 0;
+    border-top: #ddd solid 1px;
+    margin-bottom: 20px;
+}
+.allcaselist legend {
+    line-height: 36px;
+    padding-right: 20px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+
+/* 左侧保单查询样式 */
+.case_search {
+    float: left;
+    width: 100%;
+    padding: 0 7%;
+}
+.case_search .sitem {
+    position: relative;
+    float: left;
+    height: 95px;
+    width: 100%;
+}
+.case_search .sitem > label {
+    width: 100%;
+    float: left;
+    line-height: 58px;
+    color: #666;
+    font-size: 14px;
+    text-indent: 10px;
+}
+.case_search .sitem input[type='text']{
+    float: left;
+    width: 100%;
+    height: 34px;
+    line-height: 34px;
+    border: 1px solid #eee;
+    border-radius: 17px;
+    outline: none;
+    padding: 0 5%;
+    background: #f6f6f6;
+    color: #666;
+}
+.case_search .btnsearch {
+    float: left;
+    width: 100%;
+    line-height: 30px;
+    margin-top: 20px;
+    background: #00a2ea;
+    color: #fff;
+    border: 0;
+    border-radius: 17px;
+    outline: none;
+}
+
+/* 下拉框样式*/
+.case_search .sitem input.txtselect {
+    float: left;
+    width: 100%;
+    height: 34px;
+    line-height: 34px;
+    border: 1px solid #eee;
+    border-radius: 17px;
+    outline: none;
+    padding: 0 12% 0 6%;
+    background: #f6f6f6 url("../crmimages/selectbg.png") 94% 60% no-repeat;
+    cursor: pointer;
+}
+.case_search .sitem .txtselect_item{
+    position: absolute;
+    float: left;
+    display: none;
+    left: 0;
+    top:100px;
+    width: 100%;
+    height: 172px;
+    padding: 10px 15px;
+    border-radius: 17px;
+    background: #f6f6f6;
+    z-index: 10;
+    border: 1px solid #eee;
+}
+.case_search .sitem .txtselect_item .initem{
+    float: left;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.case_search .sitem .txtselect_item .initem a {
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    line-height: 30px;
+    overflow: hidden;
+    height: 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-indent: 10px;
+}
+.case_search .sitem .txtselect_item .initem a:hover,
+.case_search .sitem .txtselect_item .initem a.current {
+    background: #00a2ea;
+    color: #fff;
+}
+.case_search .sitem .txtselect_item .initem::-webkit-scrollbar {
+    width: 8px;
+}
+.case_search .sitem .txtselect_item .initem::-webkit-scrollbar-track {
+    background-color:#eee;
+    /*-webkit-border-radius: 2em;*/
+    /*-moz-border-radius: 2em;*/
+    /*border-radius:2em;*/
+}
+.case_search .sitem .txtselect_item .initem::-webkit-scrollbar-thumb {
+    background-color:#ddd;
+    /*-webkit-border-radius: 2em;*/
+    /*-moz-border-radius: 2em;*/
+    /*border-radius:2em;*/
+}

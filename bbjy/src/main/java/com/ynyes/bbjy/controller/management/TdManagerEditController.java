@@ -230,8 +230,6 @@ public class TdManagerEditController {
 			return "redirect:/Verwalter/login";
 		}
 		
-
-
 		// 参数注回
 		map.addAttribute("total", total);
 		map.addAttribute("__EVENTTARGET", __EVENTTARGET);
@@ -239,7 +237,25 @@ public class TdManagerEditController {
 		map.addAttribute("__VIEWSTATE", __VIEWSTATE);
 
 		return "/site_mag/dialog_article_list";
-	}		 
+	}
+    
+    @RequestMapping(value = "/list/dialog/pro")
+	public String ListDialogPro( 
+			Integer size, Integer pro, String __EVENTTARGET, String __EVENTARGUMENT, String __VIEWSTATE, ModelMap map,
+			HttpServletRequest req) {
+		String username = (String) req.getSession().getAttribute("manager");
+		if (null == username) {
+			return "redirect:/Verwalter/login";
+		}
+		
+		// 参数注回
+		map.addAttribute("pro", pro);
+		map.addAttribute("__EVENTTARGET", __EVENTTARGET);
+		map.addAttribute("__EVENTARGUMENT", __EVENTARGUMENT);
+		map.addAttribute("__VIEWSTATE", __VIEWSTATE);
+
+		return "/site_mag/dialog_pro_list";
+	}
     
     /**
      * 图片地址字符串整理，多张图片用,隔开,从goods搬过来

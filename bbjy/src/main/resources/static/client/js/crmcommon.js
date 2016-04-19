@@ -70,21 +70,11 @@ $(function () {
 function showdetaildialog(dialoghref, dialogid) {
     $(dialoghref).each(function () {
         $(this).click(function () {
-        var id=$(this).attr('articleId');
-    	 $.ajax({
-			      type:"post",
-			      url:"/data/detail",
-			      data:{"id":id},
-			      success:function(data){
-						$('#' + dialogid).html(data);
-						$('#' + dialogid).find('.dialog-close').bind('click', function () {
-			        $('#' + dialogid).animate({right: "-800px"}, 800);
-			    });
-			      }
-			  });	
-        	$('#' + dialogid).css("right", "-800px");
             $('#' + dialogid).animate({right: "0"}, 800);
         });
+    });
+    $('#' + dialogid).find('.dialog-close').bind('click', function () {
+        $('#' + dialogid).animate({right: "-800px"}, 800);
     });
 }
 
@@ -102,7 +92,7 @@ $.fn.togglemenu = function (toggleobj) {
         var i = false;
         var str = $(this).siblings(toggleobj).css('display');
         str == 'none' ? i = false : i = true;
-        console.info(str);
+        
         $(this).bind('click', function () {
             if (i == true) {
                 $(this).siblings(toggleobj).stop(true, false).slideUp(500);
@@ -128,7 +118,8 @@ $.fn.fttselect = function () {
             var idkey = $(this).attr('userid');
             var txt = $(this).text();
             var inputtext = $(this).parents('.txtselect_item').siblings('input[name="txtselect"]');
-            inputtext.attr('userid', idkey);
+
+            inputtext.siblings('input[type="hidden"]').val(idkey);
             inputtext.val(txt);
             $(this).parents('.txtselect_item').stop(true, false).slideUp(300);
         });
@@ -268,4 +259,18 @@ $.fn.showdialogdetail = function (option) {
     });
 
 }
+
+$.fn.editclick=function(editwrap){
+    $(this).each(function(){
+        $(this).click(function(){
+            $(this).siblings(editwrap).css("display","block");
+            $(this).siblings('label').css("display","none");
+            
+            $(this).css("display","none");
+            $(this).parents('ul:eq(0)').find('.btnwrap').css("display","block");
+            //$('.btnwrap').css("display","block");
+            
+        });
+    });
+};
 

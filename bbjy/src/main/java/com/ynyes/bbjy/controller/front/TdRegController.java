@@ -177,9 +177,7 @@ public class TdRegController {
 
 		
 		TdUser user = new TdUser();
-		user.setRealName(realName);
 		user.setUsername(username);
-		user.setPassword(password);
 		user.setMobile(mobile);
 		user.setStatusId(1L);
 		user.setRegisterTime(new Date());
@@ -188,8 +186,6 @@ public class TdRegController {
 		tdUserService.save(user);
 		
         Long id = user.getId();
-        String number = String.format("%04d", id);
-        user.setNumber(number);
         tdUserService.save(user);
         
 		

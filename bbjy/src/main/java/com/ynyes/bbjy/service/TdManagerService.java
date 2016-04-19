@@ -88,6 +88,14 @@ public class TdManagerService {
         return repository.findByUsernameAndIsEnableTrue(username);
     }
     
+    public List<TdManager> findByRoleId(Long roleId)
+    {
+    	if(null == roleId){
+    		return null;
+    	}
+    	return repository.findByRoleIdAndIsEnableTrue(roleId);
+    }
+    
     /**
      * 查找
      * 
@@ -115,6 +123,8 @@ public class TdManagerService {
     {
         return (List<TdManager>) repository.findAll(new Sort(Direction.ASC, "sortId"));
     }
+    
+    
     
     /**
      * 保存

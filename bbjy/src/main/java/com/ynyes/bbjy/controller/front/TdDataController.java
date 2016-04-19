@@ -64,7 +64,7 @@ public class TdDataController {
 			page = 0;
 		}
 
-		Integer size = ClientConstant.infoSize;
+		Integer size = ClientConstant.pageSize;
 
 		// 新闻动态所有类别
 		List<TdArticleCategory> tdArticleCategories = tdArticleCategoryService.findByMenuId(8L);
@@ -83,13 +83,9 @@ public class TdDataController {
 
 				String[] weekDays = { "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" };
 				Calendar cal = Calendar.getInstance();
-				Page<TdArticle> article_page = null;
-				if(catId.equals(3L)){
-					article_page = tdArticleService.findByMenuIdAndCategoryIdAndIsEnable(8L,catId, page, size);
-				}else{
-				    article_page = tdArticleService.findByMenuIdAndCategoryIdAndIsEnableOrderBySortId(8L,catId, page, size);
-				}
-				
+
+				Page<TdArticle> article_page = tdArticleService.findByMenuIdAndCategoryIdAndIsEnable(8L,
+						catId, page, size);
 				if (null != article_page && null != article_page.getContent() && article_page.getContent().size() > 0) {
 					for (int i = 0; i < article_page.getContent().size(); i++) {
 						TdArticle article = article_page.getContent().get(i);
@@ -149,7 +145,7 @@ public class TdDataController {
 			page = 0;
 		}
 
-		Integer size = ClientConstant.infoSize;
+		Integer size = ClientConstant.pageSize;
 
 		// 新闻动态所有类别
 		List<TdArticleCategory> tdArticleCategories = tdArticleCategoryService.findByMenuIdAndParentId(11L, 0L);

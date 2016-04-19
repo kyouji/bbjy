@@ -149,6 +149,10 @@ public class TdArticle {
 	@OneToMany
 	@JoinColumn(name = "masterId")
 	private List<TdArticleData> dataList;
+	
+	@OneToMany
+	@JoinColumn(name="artId")
+	private List<TdProduct> proList;
 
     public Long getId() {
         return id;
@@ -380,6 +384,14 @@ public class TdArticle {
 
 	public void setDataList(List<TdArticleData> dataList) {
 		this.dataList = dataList;
+	}
+
+	public List<TdProduct> getProList() {
+		return proList;
+	}
+
+	public void setProList(List<TdProduct> proList) {
+		this.proList = proList;
 	}
 
 	@Override

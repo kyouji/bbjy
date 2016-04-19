@@ -30,6 +30,8 @@ public class TdArticleService {
     @Autowired
     TdArticleRepo repository;
     
+    @Autowired
+    TdProductService tdProductService;
     /**
      * 查找菜单项
      * 
@@ -116,19 +118,6 @@ public class TdArticleService {
         return repository.findByMenuIdOrderBySortIdAsc(menuId, pageRequest);
     }
     
-    //他非要倒着排序
-    public Page<TdArticle> findByMenuIdOrder(Long menuId, int page, int size)
-    {
-        if (null == menuId)
-        {
-            return null;
-        }
-        
-        PageRequest pageRequest = new PageRequest(page, size , new Sort(Direction.DESC , "sortId").and(new Sort(Direction.DESC , "id")));
-        
-        return repository.findByMenuIdOrderBySortIdAsc(menuId, pageRequest);
-    }
-    
     //根据Recommend
     public Page<TdArticle> findByMenuIdAndRecommendIdOrderBySortIdAsc(Long menuId,Long recommendId, int page, int size)
     {
@@ -189,19 +178,7 @@ public class TdArticleService {
         
         PageRequest pageRequest = new PageRequest(page, size  , new Sort(Direction.ASC , "sortId").and(new Sort(Direction.ASC , "id")));
         
-        return repository.findByMenuIdAndCategoryId(menuId, catId, pageRequest);
-    }
-    //他非要倒着排序
-    public Page<TdArticle> findByMenuIdAndCategoryIdOrderBySortId(Long menuId, Long catId, int page, int size)
-    {
-        if (null == menuId && null == catId)
-        {
-            return null;
-        }
-        
-        PageRequest pageRequest = new PageRequest(page, size  , new Sort(Direction.DESC , "sortId").and(new Sort(Direction.DESC , "id")));
-        
-        return repository.findByMenuIdAndCategoryId(menuId, catId, pageRequest);
+        return repository.findByMenuIdAndCategoryIdOrderBySortIdAsc(menuId, catId, pageRequest);
     }
     
     public Page<TdArticle> findByMenuIdAndCategoryIdAndIsEnable(Long menuId, Long catId, int page, int size)
@@ -212,19 +189,6 @@ public class TdArticleService {
         }
         
         PageRequest pageRequest = new PageRequest(page, size, new Sort(Direction.ASC,"sortId").and(new Sort(Direction.ASC,"id")));
-        
-        return repository.findByMenuIdAndCategoryIdAndStatusId(menuId, catId, 0L, pageRequest);
-    }
-    
-    //他非要倒着排序
-    public Page<TdArticle> findByMenuIdAndCategoryIdAndIsEnableOrderBySortId(Long menuId, Long catId, int page, int size)
-    {
-        if (null == menuId && null == catId)
-        {
-            return null;
-        }
-        
-        PageRequest pageRequest = new PageRequest(page, size, new Sort(Direction.DESC,"sortId").and(new Sort(Direction.DESC,"id")));
         
         return repository.findByMenuIdAndCategoryIdAndStatusId(menuId, catId, 0L, pageRequest);
     }
@@ -567,7 +531,9 @@ public class TdArticleService {
             }
         }
         
-        tdArticleDataService.save(article.getDataList());
+        tdArticleDataService.save(article.getDataList()); // 保存附件
+        
+        tdProductService.save(article.getProList()); // 保存佣金
         
         return repository.save(article);
     }

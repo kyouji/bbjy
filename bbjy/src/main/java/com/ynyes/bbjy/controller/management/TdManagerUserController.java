@@ -165,7 +165,7 @@ public class TdManagerUserController {
         
         if (null == roleId)
         {
-            userPage = tdUserService.findAllOrderBySortIdAsc(page, size);
+            userPage = tdUserService.findAllOrderByLastLoginTimeAsc(page, size);
         }
         else
         {
@@ -239,11 +239,11 @@ public class TdManagerUserController {
         {
             if (null == keywords || "".equalsIgnoreCase(keywords))
             {
-                userPage = tdUserService.findAllOrderBySortIdAsc(page, size);
+                userPage = tdUserService.findAllOrderByLastLoginTimeAsc(page, size);
             }
             else
             {
-                userPage = tdUserService.searchAndOrderByIdDesc(keywords, page, size);
+//                userPage = tdUserService.searchAndOrderByIdDesc(keywords, page, size);
             }
         }
         else
@@ -254,7 +254,7 @@ public class TdManagerUserController {
             }
             else
             {
-                userPage = tdUserService.searchAndFindByRoleIdOrderByIdDesc(keywords, roleId, page, size);
+//                userPage = tdUserService.searchAndFindByRoleIdOrderByIdDesc(keywords, roleId, page, size);
             }
         }
         
@@ -321,14 +321,14 @@ public class TdManagerUserController {
         
         tdUserService.save(tdUser);
         
-        if(null == tdUser.getNumber() || tdUser.getNumber().equals("")){
-            Long id = tdUser.getId();
-            if(null != id){
-                String number = String.format("%04d", id);
-                tdUser.setNumber(number);
-                tdUserService.save(tdUser);
-            }
-        }
+//        if(null == tdUser.getNumber() || tdUser.getNumber().equals("")){
+//            Long id = tdUser.getId();
+//            if(null != id){
+//                String number = String.format("%04d", id);
+//                tdUser.setNumber(number);
+//                tdUserService.save(tdUser);
+//            }
+//        }
         
         return "redirect:/Verwalter/user/list/"+tdUser.getRoleId();
     }
@@ -386,7 +386,7 @@ public class TdManagerUserController {
 		if (null == keywords || "".equalsIgnoreCase(keywords)) {
 			userPage = tdUserService.findByRoleIdOrderByIdDesc(0L, page, size);
 		} else {
-			userPage = tdUserService.searchAndFindByRoleIdOrderByIdDesc(keywords, 0L, page, size);
+//			userPage = tdUserService.searchAndFindByRoleIdOrderByIdDesc(keywords, 0L, page, size);
 		}
 
 		map.addAttribute("user_page", userPage);

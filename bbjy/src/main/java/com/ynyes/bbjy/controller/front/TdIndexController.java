@@ -51,11 +51,11 @@ public class TdIndexController {
     	tdCommonService.setHeader(map, req); 
         String username = (String) req.getSession().getAttribute("username");
         if (null !=username){
-            TdUser user = tdUserService.findByUsername(username);
-            if (null != user)
-            {
-            	map.addAttribute("user", user);
-            }
+//            TdUser user = tdUserService.findByUsername(username);
+//            if (null != user)
+//            {
+//            	map.addAttribute("user", user);
+//            }
         }
 
         //讯息
@@ -82,8 +82,6 @@ public class TdIndexController {
             	map.addAttribute("user", user);
             }
         }
-
-
 
         return "/client/index";
     }

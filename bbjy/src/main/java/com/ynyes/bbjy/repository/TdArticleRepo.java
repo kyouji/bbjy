@@ -33,7 +33,7 @@ public interface TdArticleRepo extends
     
     Page<TdArticle> findByMenuIdAndStatusIdOrderByIdAsc(Long menuId, Long statusId, Pageable page);//顺序查找 zhangji
     
-    Page<TdArticle> findByMenuIdAndCategoryId(Long menuId, Long catId, Pageable page);
+    Page<TdArticle> findByMenuIdAndCategoryIdOrderBySortIdAsc(Long menuId, Long catId, Pageable page);
     
     Page<TdArticle> findByMenuIdAndCategoryIdAndStatusId(Long menuId, Long catId, Long statusId, Pageable page);
     
